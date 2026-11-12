@@ -36,3 +36,4 @@ await db.SaveChangesAsync();
 return Results.Created($"/api/products/{product.Id}", product);
 }).WithName("CreateProduct");
 app.Run();
+public partial class Program { }
