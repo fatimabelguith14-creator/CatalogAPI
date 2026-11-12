@@ -1,4 +1,3 @@
-
 using System.Net;
 using System.Net.Http.Json;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -82,6 +81,9 @@ public class ProductUnitTests : IClassFixture<WebApplicationFactory<Program>>
 
         Assert.NotNull(products);
         Assert.NotEmpty(products);
-        Assert.Contains(products, p => p.Name == "Ecran 27 pouces");
+
+        // ERREUR VOLONTAIRE (TP3 - Partie 2.E) : "Souris sans fil" n'a jamais été inséré,
+        // ce test doit donc échouer dans le pipeline. Remettre "Ecran 27 pouces" ensuite.
+        Assert.Contains(products, p => p.Name == "Souris sans fil");
     }
 }
